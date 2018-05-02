@@ -1,9 +1,12 @@
 # Poltergeist
 Home Heating Control Center
 
-# Installation
+## Installation
 
-$ cd _project directory_
+Work on your project directory:
+```bash
+$ cd _your_project_directory_
+```
 
 create configuration file _'poltergeist.conf'_:
 ```bash
