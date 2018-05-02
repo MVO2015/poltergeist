@@ -9,45 +9,45 @@ WEATHER_LAST_UPDATE_FILE=$HOME_PATH/weather.dat
 DISK_USAGE_FILE=$HOME_PATH/disk_usage.txt
 
 IPADDRESS=$(ip address | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1')
-if [ -f $POLTERGEIST_HOME/$SEASON_START_FILE ] ;
+if [ -f $REBOOT_FILE ] ;
 then
   LAST_REBOOT_DATE=@$(cat $REBOOT_FILE)
   LAST_REBOOT=$(date -d$LAST_REBOOT_DATE +'%F %R')
 else
-  LAST_REBOOT="Not yet rebooted."
+  LAST_REBOOT="N/A"
 fi
 
-if [ -f $POLTERGEIST_HOME/$SEASON_START_FILE ] ;
+if [ -f $SEASON_START_FILE ] ;
 then
   SEASON_START_DATE=@$(cat $SEASON_START_FILE)
   SEASON_START=$(date -d$SEASON_START_DATE +'%F %R')
 else
-  SEASON_START="Not yet initialized."
+  SEASON_START="N/A"
 fi
 
-if [ -f $POLTERGEIST_HOME/$SEASON_END_FILE ] ;
+if [ -f $SEASON_END_FILE ] ;
 then
   SEASON_END_DATE=@$(cat $SEASON_END_FILE)
   SEASON_END=$(date -d$SEASON_END_DATE +'%F %R')
 else
-  SEASON_END="Not yet initialized."
+  SEASON_END="N/A"
 fi
 
-if [ -f $POLTERGEIST_HOME/$HEATING_SENSOR_FILE ] ;
+if [ -f $HEATING_SENSOR_FILE ] ;
 then
   HEATING_SENSOR_DATE=@$(cat $HEATING_SENSOR_FILE | cut -f1 -d:)
   HEATING_SENSOR_VALUE=$(cat $HEATING_SENSOR_FILE | cut -f2 -d:)
   HEATING_SENSOR=$(date -d$HEATING_SENSOR_DATE +'%F %R')
 else
-  HEATING_SENSOR="Not yet initialized."
+  HEATING_SENSOR="N/A"
 fi
 
-if [ -f $POLTERGEIST_HOME/$HEATING_SENSOR_FILE ] ;
+if [ -f $WEATHER_LAST_UPDATE_FILE ] ;
 then
   WEATHER_LAST_UPDATE_DATE=@$(cat $WEATHER_LAST_UPDATE_FILE)
   WEATHER_LAST_UPDATE=$(date -d$WEATHER_LAST_UPDATE_DATE +'%F %R')
 else
-  WEATHER_LAST_UPDATE="Not yet initialized."
+  WEATHER_LAST_UPDATE="N/A"
 fi
 DISK_USAGE=$(df -h / >$DISK_USAGE_FILE)
 
