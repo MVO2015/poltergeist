@@ -1,5 +1,5 @@
 # Poltergeist
-Home Heating Control Center 
+Home Heating Control Center  
 _on your Raspberry Pi 3 model B_
 
 ## Installation
@@ -11,7 +11,7 @@ $ cd your_project_directory/poltergeist
 
 create configuration file _'poltergeist.conf'_:
 ```bash
-$ cat <<EOF >polstergeist.conf
+$ cat <<EOF >poltergeist.conf
 #!/bin/bash
 ssmtp_AuthUser=your email address, eg. you@yourdomain.com
 ssmtp_AuthPass=your smtp password, e.g. xyzabcdefghijklm0123
