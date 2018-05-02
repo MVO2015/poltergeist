@@ -1,0 +1,15 @@
+##### POLTERGEIST BEGIN #####
+MAILTO="root"
+POLTERGEIST_HOME=/home/pi/projects/poltergeist
+@reboot     bash $POLTERGEIST_HOME/onreboot.sh
+* * * * *     [ -f $POLTERGEIST_HOME/season_on.dat ] && bash $POLTERGEIST_HOME/check_and_run.sh >/dev/null
+* * * * *     [ -f $POLTERGEIST_HOME/season_on.dat ] && bash $POLTERGEIST_HOME/heating_update.sh
+* * * * *     [ -f $POLTERGEIST_HOME/season_on.dat ] && bash $POLTERGEIST_HOME/heating_monitor.sh
+0 12 * * *    bash $POLTERGEIST_HOME/heating_status.sh
+2 0 * * *     bash $POLTERGEIST_HOME/heating_graph24.sh
+5 0 * * 1     [ -f $POLTERGEIST_HOME/season_on.dat ] && bash $POLTERGEIST_HOME/heating_graph1w.sh
+10 0 1 * *    [ -f $POLTERGEIST_HOME/season_on.dat ] && bash $POLTERGEIST_HOME/heating_graph1m.sh
+15 0 1 1 *    [ -f $POLTERGEIST_HOME/season_on.dat ] && bash $POLTERGEIST_HOME/heating_graph1y.sh
+25,55 * * * * bash $POLTERGEIST_HOME/weather_update.sh
+*/5 * * * *   bash $POLTERGEIST_HOME/reboot_monitor.sh
+##### POLTERGEIST END #####
