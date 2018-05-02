@@ -2,7 +2,7 @@
 HOME_PATH=$POLTERGEIST_HOME
 
 # configuration variables - here weather_api
-. poltergeist.conf
+. $HOME_PATH/poltergeist.conf
 
 WEATHER_URL=https://api.openweathermap.org/data/2.5/weather
 WEATHER_API=$weather_api
