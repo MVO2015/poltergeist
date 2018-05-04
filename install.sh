@@ -66,3 +66,6 @@ sudo sed -i "s/^UseTLS.*/UseTLS=YES/" $SSMTP_CONFIG
 
 # Configure crontab (add/replace crontab.txt) and leave current crontab config
 crontab -l | sed '/POLTERGEIST BEGIN/,/POLTERGEIST END/d' | cat crontab.txt - | crontab
+
+# create directory for graphs
+mkdir graphs

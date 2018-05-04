@@ -9,7 +9,7 @@ DATA_FILE_NAME=$HOME_PATH/heating.old
 
 if [ ! -f $DATA_FILE_NAME ]; then
    # File does not exist, exiting silently
-    return
+    exit 1
 fi
 
 # parse 1st field
@@ -18,7 +18,7 @@ DATA_TIMESTAMP=$(cut -f1 -d: $DATA_FILE_NAME)
 re='^[0-9]+$'
 if ! [[ $DATA_TIMESTAMP =~ $re ]] ; then
    # File with timestamp is probably empty, exiting silently
-   return
+   exit 1
 fi
 
 # parse 2nd field
