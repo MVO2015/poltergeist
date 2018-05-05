@@ -36,6 +36,9 @@ sudo bash -c 'cat <<EOF >/etc/logrotate.d/poltergeist
 }
 EOF'
 
+# compile C program
+make
+
 # set Project HOME (from actual folder)
 PROJECT_HOME=$(pwd)
 sudo bash -c "echo \"export POLTERGEIST_HOME=$PROJECT_HOME\" > /etc/profile.d/poltergeist.sh"
