@@ -35,7 +35,7 @@ fi
 TODAY=$(date +%s)
 
 # Fixture
-#TODAY=$(date -d"June 1" +%s)
+TODAY=$(date -d"June 1" +%s)
 
 TODAY_MONTH=$(date -d@$TODAY +%m)
 
