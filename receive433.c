@@ -15,6 +15,7 @@
 #define THERMOSTAT_ADDR "10011"
 #define FILE_NAME "heating.dat"
 #define LOG_FILE_NAME "/var/log/poltergeist/sensors.log"
+#define SEASON_FILE_NAME "season_on.dat"
 
 volatile sig_atomic_t stop;
 
@@ -40,7 +41,7 @@ struct tm * timeinfo;
 char timestr[20]; // YYYY-MM-DD HH:MM:SS\0
 char *last_command, *actual_command;
 int data_packet_repeats;
-FILE *fptr, *logptr;
+FILE *fptr, *logptr, *fseason;
 
 int startsWith(const char *pre, const char *str)
 {
@@ -235,6 +236,10 @@ int main()
         usleep(500000);
         gpioWrite(PIN_LED_AMBER, 0);
         usleep(500000);
+        fseason = fopen(HOME "/" SEASON_FILE_NAME, "r");
+        if (!fseason) {
+            stop = 1;
+        }
     }
 
     printf("\nExiting safely\n");
