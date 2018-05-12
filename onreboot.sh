@@ -1,6 +1,6 @@
 #!/bin/bash
-# Zapise timestamp do souboru reboot.dat
-# Timestamp je int (unix epoch).
+# Write timestamp to file reboot.dat
+# Timestamp is int (unix epoch).
 
 HOME_PATH=$POLTERGEIST_HOME
 

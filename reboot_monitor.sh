@@ -1,7 +1,7 @@
 #!/bin/bash
-# Testuje soubor reboot.dat a kdyz se lisi timestamp od posledniho, tak posle mail.
-# Obsah souboru reboot.dat je proste timestamp.
-# Timestamp je int (unix epoch).
+# Test if file 'reboot.dat' is different from last timestamp and then send email.
+# Content of file 'reboot.dat' is simply timestamp.
+# Timestamp is int (unix epoch).
 
 HOME_PATH=$POLTERGEIST_HOME
 
