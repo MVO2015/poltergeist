@@ -24,11 +24,19 @@ Run installation script:
 $ ./install.sh
 ```
 
+## Emails
+Application sends these informational emails:
+* Once a day - Graph of heating for the last 24 hours
+* Once a day - Status information
+* Once a week - Graph of heating for last the week
+* Once a month - Graph of heating for the last month
+* At the end of the heating season - Graph of heating throughout the season
+
 ## Graphs
 ### Graph of heating for the last 24 hours
 ![Graph of heating for the last 24 hours](doc/heating24.png)
 
-### Graph of heating for last the  week
+### Graph of heating for last the week
 ![Graph of heating for the last week](doc/heating1w.png)
 
 ### Graph of heating for the last month
