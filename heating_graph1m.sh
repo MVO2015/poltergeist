@@ -1,14 +1,14 @@
 # create graph of the last month heating, outside temperature, humidity and wind
-# and send it via email
+# and send it by email
 
 HOME_PATH=$POLTERGEIST_HOME
+GRAPH_FILE=$HOME_PATH/graphs/heating1m.png
 
-LAST_MONTH_NAME=$(date -d-1month +%B)
+LAST_MONTH_NAME=$(date -d-1day +%B)
 
 DATE_END="today -$(($(date +%d)-1)) days 0:00"
 PERIOD=1m
-GRAPH_FILE=$HOME_PATH/graphs/heating1w.png
-GRAPH_TITLE="Topení za měsíc $LAST_MONTH_NAME"
+GRAPH_TITLE="Heating for month $LAST_MONTH_NAME"
 
 $HOME_PATH/draw_graph.sh "$DATE_END" "$PERIOD" "$GRAPH_FILE" "$GRAPH_TITLE"
 
