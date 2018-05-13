@@ -52,7 +52,7 @@ fi
 DISK_USAGE=$(df -h / >$DISK_USAGE_FILE)
 
 
-[ -f $HOME_PATH/season_on.dat ] && SEASON_TEXT="Heating season is on." || SEASON_TEXT="It is out of heating season."
+[ -f $HOME_PATH/season_on.dat ] && SEASON_TEXT="Heating season is on." || SEASON_TEXT="Heating season is over."
 
 echo "Poltergeist status information:"
 echo "-------------------------------"

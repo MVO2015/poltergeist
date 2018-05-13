@@ -1,7 +1,7 @@
 #!/bin/bash
-# Testuje soubor heating.old
-# Struktura souboru heating.old je timestamp:value
-# Timestamp je int (unix epoch) a value je 0 nebo 1 (vypnuto / zapnuto)
+# Check file 'heating.old'
+# Structure of file 'heating.old' is 'timestamp:value'
+# Timestamp is int (unix epoch) and value is 0 or 1 (off / on)
 
 HOME_PATH=$POLTERGEIST_HOME
 
@@ -43,7 +43,7 @@ if [ -f $SEASON_FILE_NAME ] ; then
     (echo $DATA | grep -Eq  ^1.*) && TEXT="$TEXT_DATE ON LENGTH"
 else
     SEASON_END=$(cat $SEASON_END_FILE_NAME)
-    TEXT=$(date -d @$SEASON_END +'Poltergeist: season finished on %Y-%m-%d.')
+    TEXT=$(date -d @$SEASON_END +'Poltergeist: heating season id over from %Y-%m-%d.')
 fi
 
 # send email
