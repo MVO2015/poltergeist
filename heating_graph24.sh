@@ -9,9 +9,9 @@ DATE_END="today 00:00"
 PERIOD=1d
 
 if [ -f $SEASON_FILE ] ; then
-  GRAPH_TITLE_PREFIX=Weather
-else
   GRAPH_TITLE_PREFIX=Heating
+else
+  GRAPH_TITLE_PREFIX=Weather
 fi
 
 GRAPH_TITLE="$GRAPH_TITLE_PREFIX for last 24 hours"
