@@ -25,15 +25,15 @@ $ ./install.sh
 ```
 
 ## Graphs
-### Graph of heating for last 24 hours
+### Graph of heating for the last 24 hours
 ![Graph of heating for the last 24 hours](doc/heating24.png)
 
-### Graph of heating for last week
+### Graph of heating for last the  week
 ![Graph of heating for the last week](doc/heating1w.png)
 
-### Graph of heating for last month
-![Graph of heating for last month](doc/heating1m.png)
+### Graph of heating for the last month
+![Graph of heating for the last month](doc/heating1m.png)
 
-### Graph of heating for the whole season
+### Graph of heating throughout the season
 ![Graph of heating throughout the season](doc/heating_season.png)
 
