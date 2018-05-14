@@ -43,7 +43,7 @@ if [ -f $SEASON_FILE_NAME ] ; then
     (echo $DATA | grep -Eq  ^1.*) && TEXT="$TEXT_DATE ON LENGTH"
 else
     SEASON_END=$(cat $SEASON_END_FILE_NAME)
-    TEXT=$(date -d @$SEASON_END +'Poltergeist: heating season id over from %Y-%m-%d.')
+    TEXT=$(date -d @$SEASON_END +'Poltergeist: heating season is over from %Y-%m-%d.')
 fi
 
 # send email
