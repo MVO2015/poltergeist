@@ -23,7 +23,8 @@ if [ "$WEATHER_TIME" != "$LAST_TIME"  ]; then
     if [ "$WEATHER_TIME" -gt "$RRDB_UPDATE"  ]
     then
         WEATHER_TEMP=$(echo $WEATHER_DATA | jq '.main.temp')
-        TEMPERATURE_C=$(python -c "print round($WEATHER_TEMP-273.15, 1)")
+        # convert degrees of Kelvin to Celsius and round it to 1 decimal
+        TEMPERATURE_C=$(awk "BEGIN{printf(\"%0.1f\", $WEATHER_TEMP-273.15)}")
         HUMIDITY=$(echo $WEATHER_DATA | jq '.main.humidity')
         WIND=$(echo $WEATHER_DATA | jq '.wind.speed')
 
